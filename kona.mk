@@ -252,6 +252,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.set_display_power_timer_ms=3000 \
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.use_latest_hwc_vsync_period=0
+
 # Properties
 PRODUCT_SYSTEM_PROPERTIES += \
     debug.hwui.skia_atrace_enabled=false
