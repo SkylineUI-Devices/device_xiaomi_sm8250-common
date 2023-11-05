@@ -94,13 +94,20 @@ public class RefreshRateTileService extends TileService {
         tile.updateTile();
     }
 
-    @Override
-    public void onStartListening() {
-        super.onStartListening();
-        tile = getQsTile();
-        syncFromSettings();
-        updateTileView();
+@Override
+public void onStartListening() {
+    super.onStartListening();
+    tile = getQsTile();
+    syncFromSettings();
+    
+    // Verify that activeRateMax is within valid limits
+    if (activeRateMax < 0 || activeRateMax >= availableRates.size()) {
+        // Assign a default value or handle the error case somehow
+        activeRateMax = 120; // We assign 120 as the default value
     }
+    
+    updateTileView();
+}
 
     @Override
     public void onClick() {
