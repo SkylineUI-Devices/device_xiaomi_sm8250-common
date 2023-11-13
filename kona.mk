@@ -252,6 +252,10 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.surface_flinger.set_display_power_timer_ms=3000 \
 
+# Properties
+PRODUCT_SYSTEM_PROPERTIES += \
+    debug.hwui.skia_atrace_enabled=false
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
